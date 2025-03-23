@@ -341,6 +341,9 @@ html {
 }
 /* #endregion*/
 /* #region portfolio*/
+.our-portfolio .container {
+  margin-bottom: 96px;
+}
 .flex-portfolio {
   display: flex;
   gap: 48px;
@@ -415,6 +418,9 @@ html {
     max-width: 360px;
     box-shadow: none;
   }
+  .our-portfolio .container {
+    margin-bottom: 120px;
+  }
 }
 
 /* #endregion*/
@@ -427,6 +433,7 @@ html {
   flex-direction: column;
   align-items: center;
   row-gap: 72px;
+  padding: 96px 16px;
 }
 .footer-logo-container {
   display: flex;
@@ -452,14 +459,330 @@ html {
   color: #fff;
   margin-bottom: 16px;
 }
-.footer-social-list {
+.footer-social {
   display: flex;
-
+  flex-direction: column;
   align-items: center;
   gap: 16px;
   margin: 0 auto;
 }
+.footer-social-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+/*!================================*/
+/*!================================*/
+/*!================================*/
+.footer-social-list-link {
+  background-color: #4d5ae5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+/*!================================*/
+/*!================================*/
+/*!================================*/
+/*!================================*/
+.footer-social-list-link:hover,
+.footer-social-list-link:focus {
+  background-color: #31d0aa;
+}
+.footer-sub-container,
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.footer-sub-paragraph {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.footer-input-for-email {
+  border: none;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 288px;
+  height: 40px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  opacity: 0.3;
+}
+.footer-input-for-email::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+  opacity: 0.6;
+}
+.footer-input-for-email:focus {
+  outline: none;
+  opacity: 0.6;
+}
+.footer-sub-button {
+  border-radius: 4px;
+  padding: 8px 24px;
+  width: 165px;
+  background-color: #4d5ae5;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
 
+@media screen and (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 108px;
+    gap: 24px;
+    row-gap: 72px;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+  .footer-social {
+    align-items: flex-start;
+    margin: 0;
+  }
+  .footer-logo-container {
+    max-width: 264px;
+    align-items: flex-start;
+  }
+  .footer-sub-container {
+    align-items: flex-start;
+  }
+  .footer-form {
+    flex-direction: row;
+  }
+  .footer-input-for-email {
+    max-width: 264px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .footer-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+  .footer-logo-container {
+    margin-right: 120px;
+  }
+  .footer-social {
+    margin-right: 80px;
+  }
+}
 /* #endregion*/
 /* #region modal*/
+.backdrop {
+  background: rgba(46, 47, 66, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0; */
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* .backdrop .is-open {
+  opacity: 1;
+  pointer-events: auto;
+} */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  max-width: 408px;
+  min-height: 584px;
+  padding: 72px 16px 24px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background: #fcfcfc;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 72px 24px 24px;
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-close-x-button {
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .modal-close-button:hover,
+  .modal-close-button:focus {
+    border: none;
+    background-color: #404bbf;
+  }
+  .modal-close-button .modal-close-x-button:hover,
+  .modal-close-button .modal-close-x-button:focus {
+    fill: #fff;
+  }
+  .modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2e2f42;
+    margin-bottom: 16px;
+  }
+  .review-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-form-wrapper {
+    margin-bottom: 8px;
+  }
+  .review-form-field-label {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+  }
+  .review-form-input-wrapper {
+    position: relative;
+  }
+  .review-form-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .review-form-input {
+    background-color: transparent;
+    outline: transparent;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 360px;
+    height: 40px;
+    padding: 8px 16px 8px 38px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .review-form-input:hover,
+  .review-form-input:focus,
+  .review-form-input + .review-form-input-icon {
+    border-color: #4d5ae5;
+    fill: #4d5ae5;
+  }
+  .review-form-wrapper-comment {
+    margin-bottom: 16px;
+  }
+  .review-form-comment {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    padding: 8px 16px;
+    resize: none;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .review-form-comment:hover,
+  .review-form-comment:focus {
+    border-color: #4d5ae5;
+  }
+  .review-form-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .review-form-checkbox-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    margin-right: 8px;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .review-form-privacy-checkbox:checked .review-form-custom-checkbox {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+  }
+  .review-form-policy-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+  }
+  .review-form-privacy-link {
+    text-decoration: underline;
+    color: #4d5ae5;
+  }
+  .review-form-submit-btn {
+    background-color: #4d5ae5;
+    padding: 16px 32px;
+    border-radius: 4px;
+    min-width: 169px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    align-self: center;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .review-form-submit-btn:hover,
+  .review-form-submit-btn:focus {
+    background-color: #404bbf;
+  }
+}
+@media screen and (max-width: 767px) {
+  .review-form {
+    width: 90%;
+  }
+  .review-form-input {
+    width: 100%;
+  }
+  .review-form-policy-label {
+    display: flex;
+    align-items: center;
+  }
+}
 /* #endregion*/
