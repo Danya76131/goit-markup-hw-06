@@ -21,20 +21,22 @@
   </head>
 
   <body>
-    <header class="pade-header">
-      <div class="container">
+    <header class="page-header">
+      <div class="header-container container">
         <nav class="header-nav">
           <a class="logo" href="./index.html"
             >Web<span class="studio">Studio</span></a
           >
-          <ul class="nav-link">
-            <li><a class="link curent-page" href="./index.html">Studio</a></li>
-            <li><a class="link" href="">Portfolio</a></li>
-            <li><a class="link" href="">Contacts</a></li>
+          <ul class="nav-list">
+            <li>
+              <a class="nav-link curent-page" href="./index.html">Studio</a>
+            </li>
+            <li><a class="nav-link" href="">Portfolio</a></li>
+            <li><a class="nav-link" href="">Contacts</a></li>
           </ul>
         </nav>
         <address>
-          <ul class="address-list">
+          <ul class="contacts-list">
             <li>
               <a class="link" href="mailto:info@devstudio.com"
                 >info@devstudio.com</a
@@ -45,6 +47,7 @@
             </li>
           </ul>
         </address>
+        <!-- big mac -->
       </div>
     </header>
 
@@ -52,7 +55,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="title">Effective Solutions for Your Business</h1>
-          <button class="butt" type="button">Order Service</button>
+          <button class="hero-button" type="button">Order Service</button>
         </div>
       </section>
 
@@ -625,7 +628,7 @@
     </main>
 
     <footer class="page-footer">
-      <div class="footer-container">
+      <div class="footer-container container">
         <div class="footer-logo-container">
           <a class="logo" href="./index.html"
             >Web<span class="studio">Studio</span></a
@@ -708,7 +711,7 @@
       </div>
     </footer>
 
-    <div class="backdrop is-open">
+    <div class="backdrop">
       <div class="modal">
         <button
           class="modal-close-btn"
@@ -796,8 +799,12 @@
                   <use href="./images/icons.svg#icon-checkmark"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the
-              <a href="#" class="review-form-privacy-link">Privacy Policy</a>
+              <span>
+                I accept the terms and conditions of the
+                <a href="#" class="review-form-privacy-link"
+                  >Privacy Policy</a
+                ></span
+              >
             </label>
           </div>
           <button class="review-form-submit-btn" type="submit">Send</button>
